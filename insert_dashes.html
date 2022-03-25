@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*        var num = prompt('Enter a number: ');
+         var array = num.split('');
+
+        for (i=1; i<array.length; i++) {
+            if ( array[i-1]%2==0 && array[i]%2==0 ) {
+                array.splice(i,0,'-');
+            }
+        }
+        console.log(array.join('')); */
+        const num=window.prompt();
+        const str = num.toString();
+        const result = [str[0]];
+        
+        for(let x=1; x<str.length; x++)
+        {
+            if(str[x-1]%2 === 0 && str[x]%2 === 0)  
+                result.push('-', str[x]);
+            else result.push(str[x]);
+        }
+        console.log(result.join(''));
+    </script>
+</body>
+</html>

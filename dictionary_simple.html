@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <caption>Dictionary Simple</caption>
+        <tbody>
+            <tr>
+                <td><select name="" id="set_in">
+                    <option>English</option>
+                    <option>Tiếng Việt</option>
+                                                </select></td>
+                    
+                <td><select name="" id="set_out">
+                    <option>Tiếng Việt</option>
+                    <option>English</option>
+                                                </select></td>
+            </tr>
+            <tr>
+                <td><input type="search" id="in"></td>
+                <td><input readonly="" id="out" placeholder="bản dịch..." ></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <button type="button" onclick="translateEngtoViet()">Translate</button>
+</body>
+<script>
+    var _Eng = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+    var _Viet= ['một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín', 'mười'];
+
+    function translateEngtoViet() {
+        let search= document.getElementById('in').value;
+        let index=_Eng.indexOf(search);
+        if (index >= 0) document.getElementById('out').value=_Viet[index];
+            else alert("Cannot translate this word");       
+    }
+</script>
+</html>

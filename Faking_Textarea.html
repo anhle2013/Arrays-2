@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Type anything slowly</h1>
+    <textarea id="text" cols="30" rows="10" onkeydown="typeFakeText()"></textarea>
+</body>
+<script>
+    let string='Hello from the other side!';
+    let arr =string.split('');
+    let str='';
+    console.log(arr);
+    function typeFakeText() {
+        let text = document.getElementById("text").value;
+        for(let i = 0; i < text.length; i++)
+        {
+            str = str + arr[i];
+            if (i === arr.length-1)
+            {
+                str = "";
+            }
+        }
+        document.getElementById("text").value = str;
+        str = "";
+        setTimeout("typeFakeText()", 1);
+    }
+</script>
+</html>
